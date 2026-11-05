@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "thunder-solution-sdk"
-version = "0.0.0"
+version = "1.0.0"
 description = "Verify Thai bank and TrueMoney slips; check the receiver, amount and duplicates before accepting payment."
 readme = "README.md"
 license = "MIT"

@@ -44,7 +44,7 @@ def _settings(api_key: str | None, v2: str | None, v1: str | None) -> tuple[str,
         key,
         v2 or os.environ.get("THUNDER_V2_BASE_URL") or "https://api.thunder.in.th/v2",
         v1 or os.environ.get("THUNDER_V1_BASE_URL") or "https://api.thunder.in.th/v1",
-        "thunder-slip-python/0.0.0",  # x-release-please-version
+        "thunder-slip-python/1.0.0",  # x-release-please-version
     )
 
 
