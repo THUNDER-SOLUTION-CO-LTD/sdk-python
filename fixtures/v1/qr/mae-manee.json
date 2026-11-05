@@ -1,0 +1,44 @@
+{
+  "id": "v1.qr.mae-manee",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "synthetic",
+  "recordedAt": "2026-10-30",
+  "conformance": "call",
+  "note": "Response from the API v1 QR controller at develop e1a545f (the 2026-10-30 input rules), run locally with the real handler and error middleware. Not recorded on dev yet.",
+  "call": {
+    "args": {
+      "type": "MAE_MANEE",
+      "ref1": "014000123456789"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "MAE_MANEE",
+      "ref1": "014000123456789"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 200,
+      "data": {
+        "image": "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",
+        "mime": "image/png",
+        "payload": "00020101021130650016A000000677010112011501075360001028602150140001234567890303SCB53037645802TH63040B34"
+      }
+    }
+  },
+  "expect": {
+    "model": "QrCode"
+  }
+}

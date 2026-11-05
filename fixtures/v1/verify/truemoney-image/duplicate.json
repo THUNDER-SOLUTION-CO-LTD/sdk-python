@@ -1,0 +1,69 @@
+{
+  "id": "v1.verify.truemoney-image.duplicate",
+  "api": "v1",
+  "operation": "v1.verifyTruemoneyByImage",
+  "source": "docs",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "note": "DuplicateSlipError.slip is a TrueWalletSlip here, a BankSlip on the bank endpoints.",
+  "call": {
+    "args": {
+      "file": "files/slip-qr.png",
+      "checkDuplicate": true
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/truewallet",
+    "auth": "bearer",
+    "contentType": "multipart/form-data",
+    "multipart": {
+      "fields": {
+        "checkDuplicate": "true"
+      },
+      "files": [
+        {
+          "field": "file",
+          "file": "files/slip-qr.png",
+          "filename": "slip.png",
+          "contentType": "image/png",
+          "size": 2896,
+          "sha256": "17939e28c450ea25961ef6815c766b307b76a4449be77fc8e9b3795c1e3204d9"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "duplicate_slip",
+      "data": {
+        "transactionId": "50012345678901",
+        "date": "2026-10-26T14:30:00+07:00",
+        "amount": 500,
+        "sender": {
+          "name": "นาย ผู้โอน ทดสอบ"
+        },
+        "receiver": {
+          "name": "นาย รับเงิน ทดสอบ",
+          "phone": "08x-xxx-xx89"
+        }
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "DuplicateSlipError",
+      "code": "duplicate_slip",
+      "status": 400,
+      "message": "duplicate_slip",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

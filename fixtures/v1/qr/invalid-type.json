@@ -1,0 +1,45 @@
+{
+  "id": "v1.qr.invalid-type",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "note": "Response-only: an SDK may refuse these args before sending (an enum value its types cannot hold, or a URL its local check rejects). SDKs that send them get this response.",
+  "call": {
+    "args": {
+      "type": "BITCOIN"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "BITCOIN"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "invalid_type",
+      "details": "type must be one of: KSHOP, MAE_MANEE, TUNGNGERN, PROMPTPAY, BILL_PAYMENT"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "invalid_type",
+      "status": 400,
+      "message": "invalid_type",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

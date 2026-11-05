@@ -1,0 +1,53 @@
+{
+  "id": "v1.verify.truemoney-image.not-a-wallet-slip",
+  "api": "v1",
+  "operation": "v1.verifyTruemoneyByImage",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "file": "files/blank.png"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/truewallet",
+    "auth": "bearer",
+    "contentType": "multipart/form-data",
+    "multipart": {
+      "fields": {},
+      "files": [
+        {
+          "field": "file",
+          "file": "files/blank.png",
+          "filename": "slip.png",
+          "contentType": "image/png",
+          "size": 744,
+          "sha256": "26b23cc11e2cad69e6702fbefa765a36aa34be32a8817acd2294f6f07f121667"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "invalid_wallet_qr"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidImageError",
+      "code": "invalid_wallet_qr",
+      "status": 400,
+      "message": "invalid_wallet_qr",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

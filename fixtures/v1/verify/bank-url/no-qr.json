@@ -1,0 +1,43 @@
+{
+  "id": "v1.verify.bank-url.no-qr",
+  "api": "v1",
+  "operation": "v1.verifyBankByUrl",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "url": "https://document.thunder.in.th/images/og.png"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "url": "https://document.thunder.in.th/images/og.png"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 404,
+      "message": "qrcode_not_found"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "SlipNotFoundError",
+      "code": "qrcode_not_found",
+      "status": 404,
+      "message": "qrcode_not_found",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

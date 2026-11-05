@@ -1,0 +1,51 @@
+{
+  "id": "v2.verify.bank-payload.rate-limited",
+  "api": "v2",
+  "operation": "verify.bankByPayload",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "note": "Parse only: with retries on, the SDK would retry this. RateLimitError.retryAfter = 2, rateLimit info from X-RateLimit-*.",
+  "call": {
+    "args": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "response": {
+    "status": 429,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8",
+      "retry-after": "2",
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "0",
+      "x-ratelimit-reset": "2"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "RATE_LIMIT_EXCEEDED",
+        "message": "Rate limit exceeded"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "RateLimitError",
+      "code": "RATE_LIMIT_EXCEEDED",
+      "status": 429,
+      "message": "Rate limit exceeded",
+      "requestId": "8f3a2b1c0d9e7f65-BKK",
+      "retryAfter": 2
+    }
+  }
+}

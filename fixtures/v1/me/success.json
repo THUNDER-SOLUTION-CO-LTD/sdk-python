@@ -1,0 +1,38 @@
+{
+  "id": "v1.me.success",
+  "api": "v1",
+  "operation": "v1.getMe",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {}
+  },
+  "request": {
+    "method": "GET",
+    "path": "/me",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 200,
+      "data": {
+        "application": "NextGen API",
+        "usedQuota": 76319,
+        "maxQuota": 900003,
+        "remainingQuota": 823684,
+        "expiredAt": "2027-08-04T15:23:27+07:00",
+        "currentCredit": 97255963
+      }
+    }
+  },
+  "expect": {
+    "model": "V1Me"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "v2.verify.bank-payload.invalid-format",
+  "api": "v2",
+  "operation": "verify.bankByPayload",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "payload": "not-a-slip-qr"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "payload": "not-a-slip-qr"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Invalid bank slip format or verification failed"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "VALIDATION_ERROR",
+      "status": 400,
+      "message": "Invalid bank slip format or verification failed",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

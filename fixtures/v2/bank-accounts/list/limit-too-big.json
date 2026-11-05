@@ -1,0 +1,45 @@
+{
+  "id": "v2.bank-accounts.list.limit-too-big",
+  "api": "v2",
+  "operation": "bankAccounts.list",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "note": "Raw API behaviour. SDKs may also check limit <= 100 locally.",
+  "call": {
+    "args": {
+      "limit": 101
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/bank-accounts",
+    "auth": "bearer",
+    "query": {
+      "limit": "101"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "limit: Too big: expected number to be <=100"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "VALIDATION_ERROR",
+      "status": 400,
+      "message": "limit: Too big: expected number to be <=100",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

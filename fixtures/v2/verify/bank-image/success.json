@@ -1,0 +1,105 @@
+{
+  "id": "v2.verify.bank-image.success",
+  "api": "v2",
+  "operation": "verify.bankByImage",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "file": "files/slip-qr.png",
+      "checkDuplicate": true
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank",
+    "auth": "bearer",
+    "contentType": "multipart/form-data",
+    "multipart": {
+      "fields": {
+        "checkDuplicate": "true"
+      },
+      "files": [
+        {
+          "field": "image",
+          "file": "files/slip-qr.png",
+          "filename": "slip.png",
+          "contentType": "image/png",
+          "size": 2896,
+          "sha256": "17939e28c450ea25961ef6815c766b307b76a4449be77fc8e9b3795c1e3204d9"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "isDuplicate": true,
+        "amountInSlip": 548,
+        "rawSlip": {
+          "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+          "transRef": "SDKFIXTURE000100000000000",
+          "date": "2026-10-26T16:51:21+07:00",
+          "countryCode": "TH",
+          "amount": {
+            "amount": 548,
+            "local": {
+              "amount": 0,
+              "currency": ""
+            }
+          },
+          "fee": 0,
+          "ref1": "",
+          "ref2": "",
+          "ref3": "",
+          "sender": {
+            "bank": {
+              "id": "014",
+              "name": "ธนาคารไทยพาณิชย์",
+              "short": "SCB"
+            },
+            "account": {
+              "name": {
+                "th": "นาย สมชาย ทดสอบ",
+                "en": ""
+              },
+              "bank": {
+                "type": "BANKAC",
+                "account": "xxxx-xx123-4"
+              }
+            }
+          },
+          "receiver": {
+            "bank": {
+              "id": "002",
+              "name": "ธนาคารกรุงเทพ",
+              "short": "BBL"
+            },
+            "account": {
+              "name": {
+                "th": "บริษัท เอสดีเค ทดสอบ จำกัด",
+                "en": ""
+              },
+              "bank": {
+                "type": "BANKAC",
+                "account": "XXXXX1234X"
+              }
+            },
+            "merchantId": ""
+          }
+        }
+      },
+      "message": "Bank slip verified successfully"
+    }
+  },
+  "expect": {
+    "model": "BankSlipResult"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "v2.info.invalid-api-key",
+  "api": "v2",
+  "operation": "getInfo",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "note": "Sent with a well-formed but unknown key.",
+  "call": {
+    "args": {}
+  },
+  "request": {
+    "method": "GET",
+    "path": "/info",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "INVALID_API_KEY",
+        "message": "Invalid API key"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "AuthenticationError",
+      "code": "INVALID_API_KEY",
+      "status": 401,
+      "message": "Invalid API key",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

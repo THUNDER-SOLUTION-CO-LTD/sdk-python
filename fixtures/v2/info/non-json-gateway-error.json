@@ -1,0 +1,36 @@
+{
+  "id": "v2.info.non-json-gateway-error",
+  "api": "v2",
+  "operation": "getInfo",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "note": "Body is not JSON (the `_nonJson` key holds the raw text). Expect ServerError, code null, rawBody = the text.",
+  "call": {
+    "args": {}
+  },
+  "request": {
+    "method": "GET",
+    "path": "/info",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 502,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "text/html"
+    },
+    "body": {
+      "_nonJson": "<html><body>502 Bad Gateway</body></html>"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "ServerError",
+      "code": null,
+      "status": 502,
+      "message": "HTTP 502",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": "webhook.events",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "webhook",
+  "cases": [
+    {
+      "id": "success",
+      "body": "webhook/bodies/success.json",
+      "expect": {
+        "model": "WebhookEvent",
+        "json": {
+          "jobId": "f5d29d39-a7f6-4147-ad4b-2f220e513eb0",
+          "batchId": null,
+          "status": "success",
+          "data": {
+            "remark": "SDK order 1001",
+            "isDuplicate": true,
+            "matchedAccount": null,
+            "amountInOrder": 548,
+            "amountInSlip": 548,
+            "isAmountMatched": true,
+            "rawSlip": {
+              "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+              "transRef": "SDKFIXTURE000100000000000",
+              "date": "2026-10-26T16:51:21+07:00",
+              "countryCode": "TH",
+              "amount": {
+                "amount": 548,
+                "local": {
+                  "amount": 0,
+                  "currency": ""
+                }
+              },
+              "fee": 0,
+              "ref1": "",
+              "ref2": "",
+              "ref3": "",
+              "sender": {
+                "bank": {
+                  "id": "014",
+                  "name": "ธนาคารไทยพาณิชย์",
+                  "short": "SCB"
+                },
+                "account": {
+                  "name": {
+                    "th": "นาย สมชาย ทดสอบ",
+                    "en": ""
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "xxxx-xx123-4"
+                  }
+                }
+              },
+              "receiver": {
+                "bank": {
+                  "id": "002",
+                  "name": "ธนาคารกรุงเทพ",
+                  "short": "BBL"
+                },
+                "account": {
+                  "name": {
+                    "th": "บริษัท เอสดีเค ทดสอบ จำกัด",
+                    "en": ""
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "XXXXX1234X"
+                  }
+                },
+                "merchantId": ""
+              }
+            }
+          },
+          "timestamp": "2026-10-29T03:55:01.000Z"
+        }
+      }
+    },
+    {
+      "id": "batch-success",
+      "body": "webhook/bodies/batch-success.json",
+      "expect": {
+        "model": "WebhookEvent",
+        "json": {
+          "jobId": "4375e437-b9f8-4f78-9940-d1199f05e2ab",
+          "batchId": "7a9daf65-276a-44ca-93cd-1a907658c542",
+          "status": "success",
+          "data": {
+            "remark": "SDK batch 0",
+            "isDuplicate": true,
+            "amountInSlip": 548,
+            "matchedAccount": {
+              "bank": {
+                "nameTh": "ธนาคารกรุงเทพ",
+                "nameEn": "Bangkok Bank",
+                "code": "002",
+                "shortCode": "BBL"
+              },
+              "nameTh": "บริษัท เอสดีเค ทดสอบ จำกัด",
+              "nameEn": "บริษัท เอสดีเค ทดสอบ จำกัด",
+              "type": "PERSONAL",
+              "bankNumber": "1234567890"
+            },
+            "rawSlip": {
+              "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+              "transRef": "SDKFIXTURE000100000000000",
+              "date": "2026-10-26T16:51:21+07:00",
+              "countryCode": "TH",
+              "amount": {
+                "amount": 548,
+                "local": {
+                  "amount": 0,
+                  "currency": ""
+                }
+              },
+              "fee": 0,
+              "ref1": "",
+              "ref2": "",
+              "ref3": "",
+              "sender": {
+                "bank": {
+                  "id": "014",
+                  "name": "ธนาคารไทยพาณิชย์",
+                  "short": "SCB"
+                },
+                "account": {
+                  "name": {
+                    "th": "นาย สมชาย ทดสอบ",
+                    "en": ""
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "xxxx-xx123-4"
+                  }
+                }
+              },
+              "receiver": {
+                "bank": {
+                  "id": "002",
+                  "name": "ธนาคารกรุงเทพ",
+                  "short": "BBL"
+                },
+                "account": {
+                  "name": {
+                    "th": "บริษัท เอสดีเค ทดสอบ จำกัด",
+                    "en": ""
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "XXXXX1234X"
+                  }
+                },
+                "merchantId": ""
+              }
+            }
+          },
+          "timestamp": "2026-10-29T03:55:01.000Z"
+        }
+      }
+    },
+    {
+      "id": "not-found",
+      "body": "webhook/bodies/not-found.json",
+      "expect": {
+        "model": "WebhookEvent",
+        "json": {
+          "jobId": "2ef0c861-3b4d-4dcc-b4d1-bf1802384890",
+          "batchId": null,
+          "status": "not_found",
+          "data": null,
+          "timestamp": "2026-10-29T04:03:00.000Z"
+        }
+      }
+    },
+    {
+      "id": "failed",
+      "body": "webhook/bodies/failed.json",
+      "expect": {
+        "model": "WebhookEvent",
+        "json": {
+          "jobId": "3f2b1c8a-9d4e-4f10-b7a2-6c5d4e3f2a1b",
+          "batchId": null,
+          "status": "failed",
+          "data": null,
+          "error": {
+            "code": "QUOTA_EXCEEDED",
+            "message": "Service quota limit has been reached"
+          },
+          "timestamp": "2026-10-29T04:05:00.000Z"
+        }
+      }
+    }
+  ]
+}

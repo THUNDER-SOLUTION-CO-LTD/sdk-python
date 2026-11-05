@@ -1,0 +1,46 @@
+{
+  "id": "v2.bank-accounts.update.invalid-extra-verify",
+  "api": "v2",
+  "operation": "bankAccounts.update",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "id": 99,
+      "extraVerify": "BOGUS"
+    }
+  },
+  "request": {
+    "method": "PATCH",
+    "path": "/bank-accounts/99",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "extraVerify": "BOGUS"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "INVALID_EXTRA_VERIFY",
+        "message": "extraVerify is not valid for this bank"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "INVALID_EXTRA_VERIFY",
+      "status": 400,
+      "message": "extraVerify is not valid for this bank",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

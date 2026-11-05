@@ -1,0 +1,46 @@
+{
+  "id": "v1.qr.bill-payment-no-ref1",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "synthetic",
+  "recordedAt": "2026-10-30",
+  "conformance": "call",
+  "note": "Response from the API v1 QR controller at develop e1a545f (the 2026-10-30 input rules), run locally with the real handler and error middleware. Not recorded on dev yet.",
+  "call": {
+    "args": {
+      "type": "BILL_PAYMENT",
+      "billerId": "010555123456701",
+      "amount": 125.5
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "BILL_PAYMENT",
+      "billerId": "010555123456701",
+      "amount": 125.5
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 200,
+      "data": {
+        "image": "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",
+        "mime": "image/png",
+        "payload": "00020101021230390016A000000677010112011501055512345670153037645406125.505802TH6304AE73"
+      }
+    }
+  },
+  "expect": {
+    "model": "QrCode"
+  }
+}

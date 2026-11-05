@@ -1,0 +1,44 @@
+{
+  "id": "v2.verify.bank-payload.no-input",
+  "api": "v2",
+  "operation": "verify.bankByPayload",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "note": "Raw API behaviour. SDKs raise InputError(INVALID_ARGUMENT) for an empty payload before sending.",
+  "call": {
+    "args": {
+      "payload": ""
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {}
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Please provide either a payload string, a image file, a base64 encoded image, or a image URL"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "VALIDATION_ERROR",
+      "status": 400,
+      "message": "Please provide either a payload string, a image file, a base64 encoded image, or a image URL",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

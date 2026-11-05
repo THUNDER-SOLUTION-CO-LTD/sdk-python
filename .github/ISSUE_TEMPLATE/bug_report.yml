@@ -1,0 +1,49 @@
+name: Bug report
+description: Report SDK behavior that differs from the documentation.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never paste API keys, webhook secrets, slip images or customer data. Report security problems privately as described in SECURITY.md.
+  - type: input
+    id: sdk-version
+    attributes:
+      label: SDK version
+    validations:
+      required: true
+  - type: input
+    id: runtime-version
+    attributes:
+      label: Runtime version
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Use synthetic values and remove all credentials and personal data.
+    validations:
+      required: true
+  - type: input
+    id: request-id
+    attributes:
+      label: Request id
+      description: Include the request id if available, without the request body or API key.

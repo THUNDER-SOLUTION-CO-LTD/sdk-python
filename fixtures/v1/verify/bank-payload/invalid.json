@@ -1,0 +1,42 @@
+{
+  "id": "v1.verify.bank-payload.invalid",
+  "api": "v1",
+  "operation": "v1.verifyBankByPayload",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "payload": "not-a-slip-qr"
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify",
+    "auth": "bearer",
+    "query": {
+      "payload": "not-a-slip-qr"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "invalid_payload"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "invalid_payload",
+      "status": 400,
+      "message": "invalid_payload",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

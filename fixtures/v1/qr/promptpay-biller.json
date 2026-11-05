@@ -1,0 +1,49 @@
+{
+  "id": "v1.qr.promptpay-biller",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "type": "PROMPTPAY",
+      "billerId": "010555123456701",
+      "ref1": "INV20261029001",
+      "ref2": "CUSTOMER001",
+      "amount": 125.5
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "PROMPTPAY",
+      "billerId": "010555123456701",
+      "ref1": "INV20261029001",
+      "ref2": "CUSTOMER001",
+      "amount": 125.5
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 200,
+      "data": {
+        "image": "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",
+        "mime": "image/png",
+        "payload": "00020101021230720016A00000067701011201150105551234567010214INV202610290010311CUSTOMER00153037645406125.505802TH6304DF28"
+      }
+    }
+  },
+  "expect": {
+    "model": "QrCode"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "v2.verify.bank-base64.invalid",
+  "api": "v2",
+  "operation": "verify.bankByBase64",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "base64": "%%%not-base64%%%"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "base64": "%%%not-base64%%%"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "base64 must be a valid base64 encoded string"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "VALIDATION_ERROR",
+      "status": 400,
+      "message": "base64 must be a valid base64 encoded string",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

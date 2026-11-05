@@ -1,0 +1,51 @@
+{
+  "id": "v2.bank-accounts.update.success",
+  "api": "v2",
+  "operation": "bankAccounts.update",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "id": 99,
+      "nameEn": "SDK TEST ACCOUNT RENAMED",
+      "extraVerify": "NAME_NUMBER"
+    }
+  },
+  "request": {
+    "method": "PATCH",
+    "path": "/bank-accounts/99",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "nameEn": "SDK TEST ACCOUNT RENAMED",
+      "extraVerify": "NAME_NUMBER"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "id": 99,
+        "bankCode": "073",
+        "bankNumber": "0730261029035458",
+        "nameTh": "บัญชี ทดสอบ เอสดีเค",
+        "nameEn": "SDK TEST ACCOUNT RENAMED",
+        "type": "NATURAL",
+        "extraVerify": "NAME_NUMBER",
+        "matchMode": null,
+        "createdAt": "2026-10-29T03:54:59.000Z",
+        "updatedAt": "2026-10-29T03:54:59.000Z",
+        "deletedAt": null
+      }
+    }
+  },
+  "expect": {
+    "model": "BankAccount"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "v2.bank-accounts.link.success",
+  "api": "v2",
+  "operation": "bankAccounts.link",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "id": 99
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/bank-accounts/99/link",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "linked": true
+      }
+    }
+  },
+  "expect": {
+    "model": "LinkResult"
+  }
+}

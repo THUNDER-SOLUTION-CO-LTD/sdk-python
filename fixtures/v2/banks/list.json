@@ -1,0 +1,474 @@
+{
+  "id": "v2.banks.list",
+  "api": "v2",
+  "operation": "banks.list",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {}
+  },
+  "request": {
+    "method": "GET",
+    "path": "/banks",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": [
+        {
+          "code": "002",
+          "nameTh": "ธนาคารกรุงเทพ",
+          "nameEn": "Bangkok Bank",
+          "shortCode": "BBL",
+          "swiftCode": "BKKBTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "004",
+          "nameTh": "ธนาคารกสิกรไทย",
+          "nameEn": "Kasikorn Bank",
+          "shortCode": "KBANK",
+          "swiftCode": "KASITHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "006",
+          "nameTh": "ธนาคารกรุงไทย",
+          "nameEn": "Krungthai Bank",
+          "shortCode": "KTB",
+          "swiftCode": "KRTHTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "011",
+          "nameTh": "ธนาคารทหารไทยธนชาต",
+          "nameEn": "TMBThanachart Bank",
+          "shortCode": "TTB",
+          "swiftCode": "TMBKTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "014",
+          "nameTh": "ธนาคารไทยพาณิชย์",
+          "nameEn": "Siam Commercial Bank",
+          "shortCode": "SCB",
+          "swiftCode": "SICOTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "020",
+          "nameTh": "ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)",
+          "nameEn": "Standard Chartered Bank (Thai)",
+          "shortCode": "SCBT",
+          "swiftCode": "SCBLTHBX",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "022",
+          "nameTh": "ธนาคารซีไอเอ็มบีไทย",
+          "nameEn": "CIMB Thai Bank",
+          "shortCode": "CIMBT",
+          "swiftCode": "CIMBTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "024",
+          "nameTh": "ธนาคารยูโอบี",
+          "nameEn": "United Overseas Bank (Thai)",
+          "shortCode": "UOBT",
+          "swiftCode": "UOVBTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "025",
+          "nameTh": "ธนาคารกรุงศรีอยุธยา",
+          "nameEn": "Bank of Ayudhya (Krungsri)",
+          "shortCode": "BAY",
+          "swiftCode": "AYUDTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "030",
+          "nameTh": "ธนาคารออมสิน",
+          "nameEn": "Government Savings Bank",
+          "shortCode": "GSB",
+          "swiftCode": "GSBATHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "033",
+          "nameTh": "ธนาคารอาคารสงเคราะห์",
+          "nameEn": "Government Housing Bank",
+          "shortCode": "GHB",
+          "swiftCode": "GHBATHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "034",
+          "nameTh": "ธนาคารเพื่อการเกษตร",
+          "nameEn": "Bank for Agriculture and Agricultural Cooperatives",
+          "shortCode": "BAAC",
+          "swiftCode": "BAACTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "066",
+          "nameTh": "ธนาคารอิสลาม",
+          "nameEn": "Islamic Bank of Thailand",
+          "shortCode": "IBANK",
+          "swiftCode": "ISBATHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "067",
+          "nameTh": "ธนาคารทิสโก้",
+          "nameEn": "TISCO Bank",
+          "shortCode": "TISCO",
+          "swiftCode": "TISCOTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "069",
+          "nameTh": "ธนาคารเกียรตินาคินภัทร",
+          "nameEn": "Kiatnakin Phatra Bank",
+          "shortCode": "KKP",
+          "swiftCode": "KKPITHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "071",
+          "nameTh": "ธนาคารไทยเครดิต",
+          "nameEn": "Thai Credit Retail Bank",
+          "shortCode": "TCRB",
+          "swiftCode": "TCRBTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "073",
+          "nameTh": "ธนาคารแลนด์ แอนด์ เฮ้าส์",
+          "nameEn": "Land and Houses Bank",
+          "shortCode": "LHBANK",
+          "swiftCode": "LHBKTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "088",
+          "nameTh": "ธนาคารคลิกซ์",
+          "nameEn": "Clicx Bank",
+          "shortCode": "CLICX",
+          "swiftCode": "CLPMTHBK",
+          "extraVerify": [
+            {
+              "label": "ตรวจจาก ชื่อบัญชี อย่างเดียว (ไม่แนะนำ)",
+              "value": "NAME"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชี อย่างเดียว",
+              "value": "NUMBER"
+            },
+            {
+              "label": "ตรวจจาก เลขบัญชีและชื่อบัญชีธนาคาร",
+              "value": "NAME_NUMBER"
+            }
+          ]
+        },
+        {
+          "code": "KSHOP",
+          "nameTh": "เคช็อป",
+          "nameEn": "KShop",
+          "shortCode": "KSHOP",
+          "swiftCode": "KSHOP",
+          "extraVerify": null
+        },
+        {
+          "code": "MAEMANEE",
+          "nameTh": "แม่มณี",
+          "nameEn": "Mae Manee",
+          "shortCode": "MAEMANEE",
+          "swiftCode": "MAEMANEE",
+          "extraVerify": null
+        },
+        {
+          "code": "MUNGMEESHOP",
+          "nameTh": "กรุงศรี มั่งมี ช้อป",
+          "nameEn": "Mung-Mee Shop",
+          "shortCode": "MUNGMEESHOP",
+          "swiftCode": "MUNGMEESHOP",
+          "extraVerify": null
+        },
+        {
+          "code": "PROMPTPAY",
+          "nameTh": "พร้อมเพย์",
+          "nameEn": "PromptPay",
+          "shortCode": "PROMPTPAY",
+          "swiftCode": "PROMPTPAY",
+          "extraVerify": [
+            {
+              "label": "เบอร์โทรศัพท์",
+              "value": "MSISDN"
+            },
+            {
+              "label": "เลขบัตรประชาชน",
+              "value": "NATID"
+            },
+            {
+              "label": "E-Wallet ID",
+              "value": "EWALLETID"
+            },
+            {
+              "label": "Biller ID",
+              "value": "BILLERID"
+            }
+          ]
+        },
+        {
+          "code": "TRUEMONEYWALLET",
+          "nameTh": "ทรูมันนี่ วอลเล็ท",
+          "nameEn": "TrueMoney Wallet",
+          "shortCode": "TRUEMONEYWALLET",
+          "swiftCode": "TRUEMONEYWALLET",
+          "extraVerify": null
+        },
+        {
+          "code": "TUNGNGERN",
+          "nameTh": "ถุงเงิน",
+          "nameEn": "Tungngern",
+          "shortCode": "TUNGNGERN",
+          "swiftCode": "TUNGNGERN",
+          "extraVerify": null
+        }
+      ]
+    }
+  },
+  "expect": {
+    "model": "BankList"
+  }
+}

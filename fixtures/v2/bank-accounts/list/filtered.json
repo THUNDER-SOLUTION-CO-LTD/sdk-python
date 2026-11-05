@@ -1,0 +1,60 @@
+{
+  "id": "v2.bank-accounts.list.filtered",
+  "api": "v2",
+  "operation": "bankAccounts.list",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "bankCode": "073",
+      "type": "NATURAL",
+      "page": 1,
+      "limit": 2
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/bank-accounts",
+    "auth": "bearer",
+    "query": {
+      "bankCode": "073",
+      "type": "NATURAL",
+      "page": "1",
+      "limit": "2"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "items": [
+          {
+            "id": 99,
+            "bankCode": "073",
+            "bankNumber": "0730261029035458",
+            "nameTh": "บัญชี ทดสอบ เอสดีเค",
+            "nameEn": "SDK TEST ACCOUNT RENAMED",
+            "type": "NATURAL",
+            "extraVerify": null,
+            "matchMode": null,
+            "createdAt": "2026-10-29T03:54:59.000Z",
+            "updatedAt": "2026-10-29T03:54:59.000Z",
+            "deletedAt": null
+          }
+        ],
+        "total": 1,
+        "page": 1,
+        "limit": 2
+      }
+    }
+  },
+  "expect": {
+    "model": "BankAccountPage"
+  }
+}

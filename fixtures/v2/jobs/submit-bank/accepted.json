@@ -1,0 +1,44 @@
+{
+  "id": "v2.jobs.submit-bank.accepted",
+  "api": "v2",
+  "operation": "jobs.submitBank",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "payload": "0046000600000101030020225SDKFIXTURE0002000000000005102TH9104752A",
+      "remark": "SDK async 1",
+      "checkDuplicate": true,
+      "callbackUrl": "https://example.com/callback"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank/async",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "payload": "0046000600000101030020225SDKFIXTURE0002000000000005102TH9104752A",
+      "remark": "SDK async 1",
+      "checkDuplicate": true,
+      "callbackUrl": "https://example.com/callback"
+    }
+  },
+  "response": {
+    "status": 202,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "jobId": "f5d29d39-a7f6-4147-ad4b-2f220e513eb0"
+      }
+    }
+  },
+  "expect": {
+    "model": "JobSubmission"
+  }
+}

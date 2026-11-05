@@ -1,0 +1,94 @@
+{
+  "id": "v1.verify.bank-payload.duplicate",
+  "api": "v1",
+  "operation": "v1.verifyBankByPayload",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "note": "duplicate_slip carries the original slip in `data`; SDKs expose it as DuplicateSlipError.slip.",
+  "call": {
+    "args": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+      "checkDuplicate": true
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify",
+    "auth": "bearer",
+    "query": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+      "checkDuplicate": "true"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "duplicate_slip",
+      "data": {
+        "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+        "transRef": "SDKFIXTURE000100000000000",
+        "date": "2026-10-26T16:51:21+07:00",
+        "countryCode": "TH",
+        "amount": {
+          "amount": 548,
+          "local": {
+            "amount": 0,
+            "currency": ""
+          }
+        },
+        "fee": 0,
+        "ref1": "",
+        "ref2": "",
+        "ref3": "",
+        "sender": {
+          "bank": {
+            "id": "014",
+            "name": "ธนาคารไทยพาณิชย์",
+            "short": "SCB"
+          },
+          "account": {
+            "name": {
+              "th": "นาย สมชาย ทดสอบ"
+            },
+            "bank": {
+              "type": "BANKAC",
+              "account": "xxxx-xx123-4"
+            }
+          }
+        },
+        "receiver": {
+          "bank": {
+            "id": "002",
+            "name": "ธนาคารกรุงเทพ",
+            "short": "BBL"
+          },
+          "account": {
+            "name": {
+              "th": "บริษัท เอสดีเค ทดสอบ จำกัด"
+            },
+            "bank": {
+              "type": "BANKAC",
+              "account": "XXXXX1234X"
+            }
+          }
+        }
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "DuplicateSlipError",
+      "code": "duplicate_slip",
+      "status": 400,
+      "message": "duplicate_slip",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

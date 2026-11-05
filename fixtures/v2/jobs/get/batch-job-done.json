@@ -1,0 +1,107 @@
+{
+  "id": "v2.jobs.get.batch-job-done",
+  "api": "v2",
+  "operation": "jobs.get",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "jobId": "4375e437-b9f8-4f78-9940-d1199f05e2ab"
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify/bank/jobs/4375e437-b9f8-4f78-9940-d1199f05e2ab",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "status": "done",
+        "attempts": 0,
+        "batchId": "7a9daf65-276a-44ca-93cd-1a907658c542",
+        "branchId": 209,
+        "serviceId": 262,
+        "callbackEventId": "69ebd1bf-a49a-43b9-900b-51bbd5e99aa8",
+        "callbackProtocol": 1,
+        "jobId": "4375e437-b9f8-4f78-9940-d1199f05e2ab",
+        "createdAt": "2026-10-29T03:55:00.522Z",
+        "updatedAt": "2026-10-29T03:55:00.562Z",
+        "result": {
+          "status": "success",
+          "data": {
+            "remark": "SDK batch 0",
+            "isDuplicate": true,
+            "amountInSlip": 548,
+            "rawSlip": {
+              "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+              "transRef": "SDKFIXTURE000100000000000",
+              "date": "2026-10-26T16:51:21+07:00",
+              "countryCode": "TH",
+              "amount": {
+                "amount": 548,
+                "local": {
+                  "amount": 0,
+                  "currency": ""
+                }
+              },
+              "fee": 0,
+              "ref1": "",
+              "ref2": "",
+              "ref3": "",
+              "sender": {
+                "bank": {
+                  "id": "014",
+                  "name": "ธนาคารไทยพาณิชย์",
+                  "short": "SCB"
+                },
+                "account": {
+                  "name": {
+                    "th": "นาย สมชาย ทดสอบ",
+                    "en": ""
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "xxxx-xx123-4"
+                  }
+                }
+              },
+              "receiver": {
+                "bank": {
+                  "id": "002",
+                  "name": "ธนาคารกรุงเทพ",
+                  "short": "BBL"
+                },
+                "account": {
+                  "name": {
+                    "th": "บริษัท เอสดีเค ทดสอบ จำกัด",
+                    "en": ""
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "XXXXX1234X"
+                  }
+                },
+                "merchantId": ""
+              }
+            }
+          }
+        },
+        "callbackDelivery": {
+          "state": "PENDING",
+          "httpStatus": null
+        }
+      }
+    }
+  },
+  "expect": {
+    "model": "Job"
+  }
+}

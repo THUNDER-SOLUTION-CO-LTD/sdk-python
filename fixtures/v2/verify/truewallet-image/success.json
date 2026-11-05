@@ -1,0 +1,87 @@
+{
+  "id": "v2.verify.truewallet-image.success",
+  "api": "v2",
+  "operation": "verify.truewalletByImage",
+  "source": "docs",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "note": "Shape from v2/verify/truewallet docs plus routes/truewallet.ts. Nested matchedAccount and rawSlip.",
+  "call": {
+    "args": {
+      "file": "files/slip-qr.png",
+      "remark": "SDK order 2001",
+      "matchAccount": true,
+      "matchAmount": 500,
+      "checkDuplicate": true
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/truewallet",
+    "auth": "bearer",
+    "contentType": "multipart/form-data",
+    "multipart": {
+      "fields": {
+        "remark": "SDK order 2001",
+        "matchAccount": "true",
+        "matchAmount": "500",
+        "checkDuplicate": "true"
+      },
+      "files": [
+        {
+          "field": "image",
+          "file": "files/slip-qr.png",
+          "filename": "slip.png",
+          "contentType": "image/png",
+          "size": 2896,
+          "sha256": "17939e28c450ea25961ef6815c766b307b76a4449be77fc8e9b3795c1e3204d9"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "remark": "SDK order 2001",
+        "isDuplicate": false,
+        "matchedAccount": {
+          "bank": {
+            "nameTh": "ทรูมันนี่ วอลเล็ท",
+            "nameEn": "TrueMoney Wallet",
+            "code": "TRUEMONEYWALLET",
+            "shortCode": "TRUEWALLET"
+          },
+          "nameTh": "นาย รับเงิน ทดสอบ",
+          "nameEn": "",
+          "type": "PERSONAL",
+          "bankNumber": "0891234567"
+        },
+        "amountInOrder": 500,
+        "amountInSlip": 500,
+        "isAmountMatched": true,
+        "rawSlip": {
+          "transactionId": "50012345678901",
+          "date": "2026-10-26T14:30:00+07:00",
+          "amount": 500,
+          "sender": {
+            "name": "นาย ผู้โอน ทดสอบ"
+          },
+          "receiver": {
+            "name": "นาย รับเงิน ทดสอบ",
+            "phone": "08x-xxx-4567"
+          }
+        }
+      },
+      "message": "TrueMoney Wallet slip verified successfully"
+    }
+  },
+  "expect": {
+    "model": "TrueWalletResult"
+  }
+}

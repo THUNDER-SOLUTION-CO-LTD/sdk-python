@@ -1,0 +1,55 @@
+{
+  "id": "v2.bank-accounts.create.duplicate",
+  "api": "v2",
+  "operation": "bankAccounts.create",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "bankCode": "073",
+      "bankNumber": "0730261029035458",
+      "nameTh": "บัญชี ทดสอบ เอสดีเค",
+      "nameEn": "SDK TEST ACCOUNT",
+      "type": "NATURAL",
+      "extraVerify": "NUMBER"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/bank-accounts",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "bankCode": "073",
+      "bankNumber": "0730261029035458",
+      "nameTh": "บัญชี ทดสอบ เอสดีเค",
+      "nameEn": "SDK TEST ACCOUNT",
+      "type": "NATURAL",
+      "extraVerify": "NUMBER"
+    }
+  },
+  "response": {
+    "status": 409,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "BANK_ACCOUNT_DUPLICATE",
+        "message": "Bank account already exists"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "ConflictError",
+      "code": "BANK_ACCOUNT_DUPLICATE",
+      "status": 409,
+      "message": "Bank account already exists",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

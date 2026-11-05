@@ -1,0 +1,41 @@
+{
+  "id": "v2.bank-accounts.link.not-found",
+  "api": "v2",
+  "operation": "bankAccounts.link",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "id": 999999999
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/bank-accounts/999999999/link",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "BANK_ACCOUNT_NOT_FOUND",
+        "message": "Bank account not found"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "NotFoundError",
+      "code": "BANK_ACCOUNT_NOT_FOUND",
+      "status": 404,
+      "message": "Bank account not found",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

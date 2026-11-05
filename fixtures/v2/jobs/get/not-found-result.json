@@ -1,0 +1,42 @@
+{
+  "id": "v2.jobs.get.not-found-result",
+  "api": "v2",
+  "operation": "jobs.get",
+  "source": "docs",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "jobId": "3f2b1c8a-9d4e-4f10-b7a2-6c5d4e3f2a1b"
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify/bank/jobs/3f2b1c8a-9d4e-4f10-b7a2-6c5d4e3f2a1b",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "jobId": "3f2b1c8a-9d4e-4f10-b7a2-6c5d4e3f2a1b",
+        "attempts": 0,
+        "createdAt": "2026-10-29T07:30:00.000Z",
+        "updatedAt": "2026-10-29T07:31:10.000Z",
+        "status": "done",
+        "result": {
+          "status": "not_found",
+          "data": null
+        }
+      }
+    }
+  },
+  "expect": {
+    "model": "Job"
+  }
+}

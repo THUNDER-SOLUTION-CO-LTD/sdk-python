@@ -1,0 +1,48 @@
+{
+  "id": "v2.jobs.submit-bank-batch.empty",
+  "api": "v2",
+  "operation": "jobs.submitBankBatch",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "note": "Raw API behaviour. SDKs raise InputError(EMPTY_BATCH) before sending.",
+  "call": {
+    "args": {
+      "slips": [],
+      "callbackUrl": "https://example.com/callback"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank/batch",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "callbackUrl": "https://example.com/callback",
+      "slips": []
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "slips: slips must contain at least one item"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "VALIDATION_ERROR",
+      "status": 400,
+      "message": "slips: slips must contain at least one item",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

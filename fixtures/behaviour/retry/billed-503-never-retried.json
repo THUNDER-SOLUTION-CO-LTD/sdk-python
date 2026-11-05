@@ -1,0 +1,102 @@
+{
+  "id": "behaviour.retry.billed-503-never-retried",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "behaviour",
+  "call": {
+    "clientOptions": {
+      "maxRetries": 2
+    },
+    "operation": "verify.bankByPayload",
+    "args": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "steps": [
+    {
+      "status": 503,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8",
+        "retry-after": "1"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "RENEWAL_TEMPORARILY_UNAVAILABLE",
+          "message": "Billing renewal service is temporarily unavailable"
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "body": {
+        "success": true,
+        "data": {
+          "amountInSlip": 548,
+          "rawSlip": {
+            "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38",
+            "transRef": "SDKFIXTURE000100000000000",
+            "date": "2026-10-26T16:51:21+07:00",
+            "countryCode": "TH",
+            "amount": {
+              "amount": 548,
+              "local": {
+                "amount": 0,
+                "currency": ""
+              }
+            },
+            "fee": 0,
+            "ref1": "",
+            "ref2": "",
+            "ref3": "",
+            "sender": {
+              "bank": {
+                "id": "014",
+                "name": "ธนาคารไทยพาณิชย์",
+                "short": "SCB"
+              },
+              "account": {
+                "name": {
+                  "th": "นาย สมชาย ทดสอบ",
+                  "en": ""
+                },
+                "bank": {
+                  "type": "BANKAC",
+                  "account": "xxxx-xx123-4"
+                }
+              }
+            },
+            "receiver": {
+              "bank": {
+                "id": "002",
+                "name": "ธนาคารกรุงเทพ",
+                "short": "BBL"
+              },
+              "account": {
+                "name": {
+                  "th": "บริษัท เอสดีเค ทดสอบ จำกัด",
+                  "en": ""
+                },
+                "bank": {
+                  "type": "BANKAC",
+                  "account": "XXXXX1234X"
+                }
+              },
+              "merchantId": ""
+            }
+          }
+        },
+        "message": "Bank slip verified successfully"
+      }
+    }
+  ],
+  "expect": {
+    "requests": 1,
+    "error": "ServiceUnavailableError"
+  }
+}

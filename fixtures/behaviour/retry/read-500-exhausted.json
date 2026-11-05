@@ -1,0 +1,61 @@
+{
+  "id": "behaviour.retry.read-500-exhausted",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "behaviour",
+  "call": {
+    "clientOptions": {
+      "maxRetries": 2
+    },
+    "operation": "getInfo",
+    "args": {}
+  },
+  "steps": [
+    {
+      "status": 500,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "An unexpected error occurred"
+        }
+      }
+    },
+    {
+      "status": 500,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "An unexpected error occurred"
+        }
+      }
+    },
+    {
+      "status": 500,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "An unexpected error occurred"
+        }
+      }
+    }
+  ],
+  "expect": {
+    "requests": 3,
+    "error": "ServerError"
+  }
+}

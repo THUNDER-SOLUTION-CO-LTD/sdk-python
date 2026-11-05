@@ -1,0 +1,48 @@
+{
+  "id": "v1.qr.ref-without-biller",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "type": "PROMPTPAY",
+      "msisdn": "0812345678",
+      "ref1": "X1"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "PROMPTPAY",
+      "msisdn": "0812345678",
+      "ref1": "X1"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "invalid_request",
+      "details": "ref1 and ref2 are only allowed with billerId"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "invalid_request",
+      "status": 400,
+      "message": "invalid_request",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

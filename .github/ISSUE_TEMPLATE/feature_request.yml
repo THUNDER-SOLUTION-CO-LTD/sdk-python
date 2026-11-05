@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a change to the SDK.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: Never paste API keys, webhook secrets, slip images or customer data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

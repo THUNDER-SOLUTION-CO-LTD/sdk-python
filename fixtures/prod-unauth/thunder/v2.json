@@ -1,0 +1,40 @@
+{
+  "id": "prod-unauth.thunder.v2",
+  "api": "v2",
+  "operation": "getInfo",
+  "source": "live-prod-unauth",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "note": "GET https://api.thunder.in.th/v2/info without a key. Confirms the API base URL and the 401 shape.",
+  "call": {
+    "args": {}
+  },
+  "request": {
+    "method": "GET",
+    "path": "/info",
+    "auth": "none"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "MISSING_API_KEY",
+        "message": "API key is required"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "AuthenticationError",
+      "code": "MISSING_API_KEY",
+      "status": 401,
+      "message": "API key is required",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

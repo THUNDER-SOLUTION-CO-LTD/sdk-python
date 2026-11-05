@@ -1,0 +1,45 @@
+{
+  "id": "v2.verify.bank-url.private-ip",
+  "api": "v2",
+  "operation": "verify.bankByUrl",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "url": "http://127.0.0.1/slip.png"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/bank",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "url": "http://127.0.0.1/slip.png"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "URL_INVALID_IP_RANGE",
+        "message": "URL points to an invalid or restricted IP address"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidUrlError",
+      "code": "URL_INVALID_IP_RANGE",
+      "status": 400,
+      "message": "URL points to an invalid or restricted IP address",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "v1.qr.tungngern",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "synthetic",
+  "recordedAt": "2026-10-30",
+  "conformance": "call",
+  "note": "Response from the API v1 QR controller at develop e1a545f (the 2026-10-30 input rules), run locally with the real handler and error middleware. Not recorded on dev yet.",
+  "call": {
+    "args": {
+      "type": "TUNGNGERN",
+      "ref1": "ORDER12345",
+      "merchantName": "MY STORE",
+      "amount": 750
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "TUNGNGERN",
+      "ref1": "ORDER12345",
+      "merchantName": "MY STORE",
+      "amount": 750
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 200,
+      "data": {
+        "image": "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",
+        "mime": "image/png",
+        "payload": "00020101021230640016A00000067701011201150107537000882050210ORDER123450307MYSTORE53037645406750.005802TH620807040000630473F2"
+      }
+    }
+  },
+  "expect": {
+    "model": "QrCode"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "webhook.signatures",
+  "source": "openssl",
+  "recordedAt": "2026-10-29",
+  "conformance": "webhook",
+  "secret": "whsec_sdk_fixture_8d0c2f1e",
+  "headers": {
+    "thunder": "X-Thunder-Signature"
+  },
+  "algorithm": "HMAC-SHA256 over the raw body bytes, lowercase hex, prefixed with sha256=",
+  "command": "openssl dgst -sha256 -hmac <secret> -hex < <body file>",
+  "cases": [
+    {
+      "id": "valid",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": "sha256=19e2c45374f6aebab51758802fd7931779814b5302bf209036642db102a0d33f",
+      "valid": true
+    },
+    {
+      "id": "valid-success-body",
+      "body": "webhook/bodies/success.json",
+      "signature": "sha256=f02d6f611d2b895854f032a3493c7ff80b33ba17a13e0a1e750ef97e0f945cf2",
+      "valid": true
+    },
+    {
+      "id": "tampered-body",
+      "body": "webhook/bodies/batch-success.tampered.json",
+      "signature": "sha256=19e2c45374f6aebab51758802fd7931779814b5302bf209036642db102a0d33f",
+      "valid": false
+    },
+    {
+      "id": "wrong-secret",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": "sha256=61332a4dcf2e10e12c271aea03417ca39b8de48d86afde9b3eeabbe604bee48d",
+      "valid": false
+    },
+    {
+      "id": "missing-prefix",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": "19e2c45374f6aebab51758802fd7931779814b5302bf209036642db102a0d33f",
+      "valid": false
+    },
+    {
+      "id": "uppercase-hex",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": "sha256=19E2C45374F6AEBAB51758802FD7931779814B5302BF209036642DB102A0D33F",
+      "valid": false
+    },
+    {
+      "id": "truncated",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": "sha256=19e2c45374f6aebab51758802fd7931779814b5302bf209036642db102a0d3",
+      "valid": false
+    },
+    {
+      "id": "empty-header",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": "",
+      "valid": false
+    },
+    {
+      "id": "missing-header",
+      "body": "webhook/bodies/batch-success.json",
+      "signature": null,
+      "valid": false
+    }
+  ]
+}

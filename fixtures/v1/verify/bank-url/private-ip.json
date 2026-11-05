@@ -1,0 +1,43 @@
+{
+  "id": "v1.verify.bank-url.private-ip",
+  "api": "v1",
+  "operation": "v1.verifyBankByUrl",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "url": "http://127.0.0.1/slip.png"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "url": "http://127.0.0.1/slip.png"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "invalid_url"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidUrlError",
+      "code": "invalid_url",
+      "status": 400,
+      "message": "invalid_url",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

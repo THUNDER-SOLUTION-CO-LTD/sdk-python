@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://document.thunder.in.th
+    about: Read the SDK guides and API reference.
+  - name: Account and billing support
+    url: https://developer.thunder.in.th/contact
+    about: Contact support through the developer portal.
+  - name: Private security report
+    url: https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/privately-reporting-a-security-vulnerability
+    about: Use Security > Report a vulnerability in the affected SDK repository, or use https://developer.thunder.in.th/contact. Never report vulnerabilities in public issues.

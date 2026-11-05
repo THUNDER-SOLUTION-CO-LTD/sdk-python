@@ -1,0 +1,56 @@
+{
+  "id": "v1.qr.tungngern-thai-name",
+  "api": "v1",
+  "operation": "v1.generateQr",
+  "source": "synthetic",
+  "recordedAt": "2026-10-30",
+  "conformance": "call",
+  "note": "Response from the API v1 QR controller at develop e1a545f (the 2026-10-30 input rules), run locally with the real handler and error middleware. Not recorded on dev yet.",
+  "call": {
+    "args": {
+      "type": "TUNGNGERN",
+      "ref1": "ORDER12345",
+      "merchantName": "ร้านของฉัน",
+      "amount": 750
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/qr/generate",
+    "auth": "bearer",
+    "contentType": "application/json",
+    "body": {
+      "type": "TUNGNGERN",
+      "ref1": "ORDER12345",
+      "merchantName": "ร้านของฉัน",
+      "amount": 750
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 400,
+      "message": "invalid_request",
+      "details": [
+        {
+          "field": "merchantName",
+          "message": "merchantName: use the English shop name shown in the Tung Ngern app"
+        }
+      ]
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidRequestError",
+      "code": "invalid_request",
+      "status": 400,
+      "message": "invalid_request",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

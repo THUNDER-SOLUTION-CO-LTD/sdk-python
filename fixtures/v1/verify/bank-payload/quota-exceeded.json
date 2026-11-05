@@ -1,0 +1,42 @@
+{
+  "id": "v1.verify.bank-payload.quota-exceeded",
+  "api": "v1",
+  "operation": "v1.verifyBankByPayload",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify",
+    "auth": "bearer",
+    "query": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 403,
+      "message": "quota_exceeded"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "QuotaExceededError",
+      "code": "quota_exceeded",
+      "status": 403,
+      "message": "quota_exceeded",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

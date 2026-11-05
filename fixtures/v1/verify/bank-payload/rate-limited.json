@@ -1,0 +1,44 @@
+{
+  "id": "v1.verify.bank-payload.rate-limited",
+  "api": "v1",
+  "operation": "v1.verifyBankByPayload",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "response-only",
+  "call": {
+    "args": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify",
+    "auth": "bearer",
+    "query": {
+      "payload": "0046000600000101030140225SDKFIXTURE0001000000000005102TH91043C38"
+    }
+  },
+  "response": {
+    "status": 429,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "retry-after": "3",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 429,
+      "message": "rate_limit_exceeded"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "RateLimitError",
+      "code": "rate_limit_exceeded",
+      "status": 429,
+      "message": "rate_limit_exceeded",
+      "requestId": "8f3a2b1c0d9e7f65-BKK",
+      "retryAfter": 3
+    }
+  }
+}

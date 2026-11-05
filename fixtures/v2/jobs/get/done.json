@@ -1,0 +1,106 @@
+{
+  "id": "v2.jobs.get.done",
+  "api": "v2",
+  "operation": "jobs.get",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "jobId": "f5d29d39-a7f6-4147-ad4b-2f220e513eb0"
+    }
+  },
+  "request": {
+    "method": "GET",
+    "path": "/verify/bank/jobs/f5d29d39-a7f6-4147-ad4b-2f220e513eb0",
+    "auth": "bearer"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "data": {
+        "status": "done",
+        "attempts": 0,
+        "branchId": 209,
+        "serviceId": 262,
+        "callbackEventId": "704f98b6-10cc-4a87-aa58-006957a472d7",
+        "callbackProtocol": 1,
+        "jobId": "f5d29d39-a7f6-4147-ad4b-2f220e513eb0",
+        "createdAt": "2026-10-29T03:55:00.430Z",
+        "updatedAt": "2026-10-29T03:55:00.518Z",
+        "result": {
+          "status": "success",
+          "data": {
+            "remark": "SDK async 1",
+            "isDuplicate": true,
+            "amountInSlip": 115,
+            "rawSlip": {
+              "payload": "0046000600000101030020225SDKFIXTURE0002000000000005102TH9104752A",
+              "transRef": "SDKFIXTURE000200000000000",
+              "date": "2026-10-26T02:00:09+07:00",
+              "countryCode": "",
+              "amount": {
+                "amount": 115,
+                "local": {
+                  "amount": 0,
+                  "currency": ""
+                }
+              },
+              "fee": 0,
+              "ref1": "",
+              "ref2": "",
+              "ref3": "",
+              "sender": {
+                "bank": {
+                  "id": "002",
+                  "name": "ธนาคารกรุงเทพ",
+                  "short": "BBL"
+                },
+                "account": {
+                  "name": {
+                    "th": "MR. SOMCHAI TEST",
+                    "en": "MR. SOMCHAI TEST"
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "123-4-xxx567"
+                  }
+                }
+              },
+              "receiver": {
+                "bank": {
+                  "id": "014",
+                  "name": "ธนาคารไทยพาณิชย์",
+                  "short": "SCB"
+                },
+                "account": {
+                  "name": {
+                    "th": "บริษัท เอสดีเค ทดสอบ จำกัด",
+                    "en": "SDK TEST CO., LTD."
+                  },
+                  "bank": {
+                    "type": "BANKAC",
+                    "account": "123-4-xxx567"
+                  }
+                },
+                "merchantId": ""
+              }
+            }
+          }
+        },
+        "callbackDelivery": {
+          "state": "PENDING",
+          "httpStatus": null
+        }
+      }
+    }
+  },
+  "expect": {
+    "model": "Job"
+  }
+}

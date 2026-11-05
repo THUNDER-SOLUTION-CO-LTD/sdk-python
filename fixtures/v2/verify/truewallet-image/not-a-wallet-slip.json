@@ -1,0 +1,55 @@
+{
+  "id": "v2.verify.truewallet-image.not-a-wallet-slip",
+  "api": "v2",
+  "operation": "verify.truewalletByImage",
+  "source": "live-dev",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "call": {
+    "args": {
+      "file": "files/blank.png"
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/verify/truewallet",
+    "auth": "bearer",
+    "contentType": "multipart/form-data",
+    "multipart": {
+      "fields": {},
+      "files": [
+        {
+          "field": "image",
+          "file": "files/blank.png",
+          "filename": "slip.png",
+          "contentType": "image/png",
+          "size": 744,
+          "sha256": "26b23cc11e2cad69e6702fbefa765a36aa34be32a8817acd2294f6f07f121667"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "success": false,
+      "error": {
+        "code": "INVALID_WALLET_QR",
+        "message": "No readable TrueMoney Wallet QR code"
+      }
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "InvalidImageError",
+      "code": "INVALID_WALLET_QR",
+      "status": 400,
+      "message": "No readable TrueMoney Wallet QR code",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}

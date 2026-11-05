@@ -1,0 +1,78 @@
+{
+  "id": "behaviour.retry.read-429-retry-after",
+  "source": "synthetic",
+  "recordedAt": "2026-10-29",
+  "conformance": "behaviour",
+  "call": {
+    "clientOptions": {
+      "maxRetries": 2
+    },
+    "operation": "getInfo",
+    "args": {}
+  },
+  "steps": [
+    {
+      "status": 429,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8",
+        "retry-after": "1"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "RATE_LIMIT_EXCEEDED",
+          "message": "Rate limit exceeded"
+        }
+      }
+    },
+    {
+      "status": 200,
+      "headers": {
+        "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "body": {
+        "success": true,
+        "data": {
+          "application": {
+            "name": "NextGen API",
+            "autoRenew": {
+              "expired": true,
+              "quota": false,
+              "createdAt": "2025-11-17T11:19:31+07:00",
+              "expiresAt": "2027-08-04T15:23:27+07:00"
+            },
+            "quota": {
+              "used": 76319,
+              "max": 900003,
+              "remaining": 823684,
+              "totalUsed": 82360
+            }
+          },
+          "branch": {
+            "name": "Next 0",
+            "isActive": true,
+            "quota": {
+              "used": 82317,
+              "totalUsed": 82317
+            }
+          },
+          "account": {
+            "email": "developer@example.com",
+            "credit": 97255963
+          },
+          "product": {
+            "name": "Premium 1"
+          }
+        },
+        "message": "Information retrieved successfully"
+      }
+    }
+  ],
+  "expect": {
+    "requests": 2,
+    "minDelaySeconds": 1,
+    "result": "Info"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "prod-unauth.thunder.v1",
+  "api": "v1",
+  "operation": "v1.getMe",
+  "source": "live-prod-unauth",
+  "recordedAt": "2026-10-29",
+  "conformance": "call",
+  "note": "GET https://api.thunder.in.th/v1/me without a key. Confirms the API base URL and the 401 shape.",
+  "call": {
+    "args": {}
+  },
+  "request": {
+    "method": "GET",
+    "path": "/me",
+    "auth": "none"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cf-ray": "8f3a2b1c0d9e7f65-BKK",
+      "content-type": "application/json; charset=utf-8",
+      "x-request-id": "8f3a2b1c0d9e7f65-BKK"
+    },
+    "body": {
+      "status": 401,
+      "message": "unauthorized"
+    }
+  },
+  "expect": {
+    "error": {
+      "class": "AuthenticationError",
+      "code": "unauthorized",
+      "status": 401,
+      "message": "unauthorized",
+      "requestId": "8f3a2b1c0d9e7f65-BKK"
+    }
+  }
+}
