@@ -60,7 +60,7 @@ class Transport:
         http: httpx.Client | None = None,
         timeout: float = 30,
         max_retries: int = 2,
-        user_agent: str = "sdk/0.0.0",  # x-release-please-version
+        user_agent: str = "sdk/1.0.0",  # x-release-please-version
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
         if (
@@ -177,7 +177,7 @@ class AsyncTransport:
         http: httpx.AsyncClient | None = None,
         timeout: float = 30,
         max_retries: int = 2,
-        user_agent: str = "sdk/0.0.0",  # x-release-please-version
+        user_agent: str = "sdk/1.0.0",  # x-release-please-version
         sleep: Callable[[float], Awaitable[None]] = asyncio.sleep,
     ) -> None:
         if (

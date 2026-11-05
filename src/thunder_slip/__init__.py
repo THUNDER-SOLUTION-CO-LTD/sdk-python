@@ -5,7 +5,7 @@ from .models import AccountType as AccountType, QrType as QrType
 from ._codec import UNSET as UNSET
 from ._base_error import SDKError as SDKError
 
-__version__ = "0.0.0"  # x-release-please-version
+__version__ = "1.0.0"  # x-release-please-version
 
 from ._base_error import ThunderError as ThunderError
 
